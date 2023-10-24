@@ -398,7 +398,7 @@ class CommandShell(cmd.Cmd, object):
 
 
     def do_shell(self, s):
-        os.system(s)
+        subprocess.run(s, shell=False, check=True, text=True)
 
 
     def __init__(self):
